@@ -50,6 +50,7 @@ public class JsonDifferenceServiceImpl implements JsonDifferenceService {
     public JsonDifferenceResponse evaluateDifference(final String id) throws ResourceNotFoundException {
         LOGGER.debug("Evaluating differences for record with id: {}", id);
         JsonDifferenceRecord record = repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Operation not found"));
+        //Validations are done using javax.validation
         return jsonComparator.compare(record.getLeftJson(), record.getRightJson());
     }
 }

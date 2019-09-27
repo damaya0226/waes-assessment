@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * TODO: documentation
+ * Rest controller which handler all requests
  * Created by Diego Amaya on 25/09/2019.
  */
 @RestController
@@ -21,10 +21,16 @@ public class JsonDifferenceV1Controller {
     @Autowired
     private JsonDifferenceService service;
 
-    @PostMapping("{id}/{part}")
+    @PostMapping("{id}/left")
     @ResponseStatus(HttpStatus.CREATED)
-    public void savePart(@PathVariable("id") String id, @PathVariable Part part, @RequestBody byte[] encodedJson){
-        service.savePart(id, part, encodedJson);
+    public void saveLeftPart(@PathVariable("id") String id, @RequestBody byte[] encodedJson){
+        service.savePart(id, Part.LEFT, encodedJson);
+    }
+
+    @PostMapping("{id}/right")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void saveRightPart(@PathVariable("id") String id, @RequestBody byte[] encodedJson){
+        service.savePart(id, Part.RIGHT, encodedJson);
     }
 
     @GetMapping("{id}")

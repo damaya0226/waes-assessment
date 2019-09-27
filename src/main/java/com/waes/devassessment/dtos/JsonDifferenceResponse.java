@@ -8,4 +8,5 @@ import lombok.Data;
 @Data
 public class JsonDifferenceResponse {
     private JsonComparisonResult result;
+    private JsonComparisonDetail detail;
 }

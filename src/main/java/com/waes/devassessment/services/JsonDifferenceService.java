@@ -9,6 +9,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 /**
+ * Json difference service interface which contains signatures
  * Created by Diego Amaya on 25/09/2019.
  */
 @Validated
