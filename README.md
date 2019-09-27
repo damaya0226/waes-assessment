@@ -49,11 +49,43 @@ Insert right part example:
 Evaluating the differences example:
 > curl -X GET "http://localhost:8080/v1/diff/f693bb60-6330-4f95-9fc7-bcd02eb4a976" -H "accept: application/json;charset=UTF-8"
 
-Result:
+Result when equal:
 
 ```
 {
   "result": "EQUAL"
+}
+```
+
+Result with different sizes:
+
+```
+{
+  "result": "DIFFERENT_SIZE"
+}
+```
+
+Result same size different values:
+
+```
+{
+  "result": "NOT_EQUAL",
+  "detail": {
+    "differences": [
+      {
+        "index": 2,
+        "length": 1
+      },
+      {
+        "index": 8,
+        "length": 2
+      },
+      {
+        "index": 11,
+        "length": 2
+      }
+    ]
+  }
 }
 ```
 
