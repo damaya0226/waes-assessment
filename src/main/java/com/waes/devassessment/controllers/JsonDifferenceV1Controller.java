@@ -4,6 +4,7 @@ import com.waes.devassessment.dtos.JsonDifferenceResponse;
 import com.waes.devassessment.entities.Part;
 import com.waes.devassessment.exceptions.ResourceNotFoundException;
 import com.waes.devassessment.services.JsonDifferenceService;
+import io.swagger.annotations.SwaggerDefinition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping(value = "/v1/diff", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+@SwaggerDefinition
 public class JsonDifferenceV1Controller {
 
     @Autowired

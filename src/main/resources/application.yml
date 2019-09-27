@@ -1,0 +1,16 @@
+server.port: 8080
+
+#LOGGING PROPERTIES
+logging:
+  level:
+    com.waes: INFO
+  file: ./json-difference-service.log
+  file.max-history: 3
+  file.max-size: 50MB
+
+#ACTUATOR CONFIGURATION
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "loggers,health,env,info,logfile,metrics"
