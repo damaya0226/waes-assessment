@@ -14,3 +14,7 @@ management:
     web:
       exposure:
         include: "loggers,health,env,info,logfile,metrics"
+
+#ONLY INCLUDE NON NULL VALUES IN JSON SERIALIZATION
+spring.jackson:
+    default-property-inclusion: non_null
